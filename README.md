@@ -44,6 +44,14 @@ This is an official PyTorch code repository of the paper "Point-Based Modeling o
 - Download models checkpoints (~570 Mb): [Google Drive](https://drive.google.com/file/d/16QFuHhou_C4EY6GvKCgbJvgbkIycITHw/view?usp=sharing) and place them to the `checkpoints/` folder;
 - Download a sample data we provide to check the appearance fitting (~480 Mb): [Google Drive](https://drive.google.com/file/d/13ma8J0-ah4sVn0uH_hYSoJ_GLMxFpoQa/view?usp=sharing), unpack it, and place `psp/` folder to the `samples/` folder.
 
+## Custom data
+
+To run our pipeline on custom data (images or videos):
+- run [our fork](https://github.com/izakharkin/Graphonomy#inference-point_based_clothing) of Graphonomy to obtain clothing segmentation mask in our format;
+- run e.g. [SMPLify](https://smplify.is.tue.mpg.de/download.php) or any other suitable method to obtain the SMPL-parameters (3D body pose and shape ground truth).
+
+We recommend to run these methods on [`internet_images/`](https://github.com/saic-vul/point_based_clothing/tree/main/samples/internet_images) test dataset to make sure that your outputs exactly match the format inside [`internet_images/segmentations/cloth`](https://github.com/saic-vul/point_based_clothing/tree/main/samples/internet_images/segmentations/cloth) and [`internet_images/smpl/results`](https://github.com/saic-vul/point_based_clothing/tree/main/samples/internet_images/smpl/results).
+
 ## Run
 
 We provide scripts for *geometry* fitting and inference and *appearance* fitting and inference.
